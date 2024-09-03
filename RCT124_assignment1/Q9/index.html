@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+    <style>
+      /* Basic styling for the container */
+      .subscribe-container {
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        background-color: #fff;
+      }
+
+      .subscribe-container img {
+        width: 100px;
+        margin-bottom: 20px;
+      }
+
+      .subscribe-container h2 {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .subscribe-container p {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .subscribe-container input {
+        width: 80%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 50px;
+        outline: none;
+        text-align: center;
+      }
+
+      .subscribe-container button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+      }
+
+      .subscribe-container button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const SubscribeForm = () => {
+        return (
+          <React.Fragment>
+            <div className="subscribe-container">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHOA1IWP5xoHTva2KbXH6KevormAjzDYuuRA&s" alt="Subscribe" />
+              <h2>SUBSCRIBE</h2>
+              <p>Subscribe to our newsletter & stay up to date!</p>
+              <input type="email" placeholder="john@doe.net" />
+              <button>Subscribe</button>
+            </div>
+          </React.Fragment>
+        );
+      };
+
+      ReactDOM.render(<SubscribeForm />, document.getElementById('root'));
+    </script>
+  </body>
+</html>

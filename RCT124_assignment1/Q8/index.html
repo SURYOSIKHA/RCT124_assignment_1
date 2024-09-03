@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- React and ReactDOM Libraries -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <!-- Babel Standalone to enable JSX syntax -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Define the React component
+      const Ele = () => {
+        const popalert = () => {
+          alert("Hello");
+        };
+
+        return (
+          <React.Fragment>
+            <div className="main" style={{ padding: '10px', border: '1px solid black' }}>
+              
+              <button onClick={popalert}>Click Me</button>
+            </div>
+          </React.Fragment>
+        );
+      };
+
+      // Render the component to the DOM
+      ReactDOM.render(<Ele />, document.getElementById('root'));
+    </script>
+  </body>
+</html>

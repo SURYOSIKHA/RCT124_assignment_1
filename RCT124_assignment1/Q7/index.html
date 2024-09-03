@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      // Your JSX code here
+//simple jsx implimentation
+      const simpleele= <p>Seize the day</p>;
+    
+    //dynamic jsx implimentation
+
+    const text="Seize the day";
+    const dynamicele=<p>{text}</p>
+    //conditional rendering jsx implimentation
+    const day=true;
+    const conele=day ? <p>Seize the day</p> : <p>Pass the day</p>;
+    
+
+    //rendering
+    // Render elements
+    ReactDOM.render(
+        <div>
+          {simpleele}
+          {dynamicele}
+          {conele}
+        </div>,
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>

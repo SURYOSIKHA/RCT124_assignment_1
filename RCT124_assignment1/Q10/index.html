@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>React Product Page</title>
+    <style>
+      .product-container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      .product-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .product-title {
+        font-size: 28px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+
+      .product-price {
+        font-size: 24px;
+        color: #555;
+        margin: 10px 0;
+      }
+
+      .product-description {
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .product-features, .product-details {
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #f0ad4e;
+      }
+
+      .feature-list {
+        display: flex;
+        justify-content: space-between;
+        max-width: 600px;
+        margin-bottom: 10px;
+      }
+
+      .add-to-cart {
+        padding: 15px;
+        background-color: #000;
+        color: white;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      .delivery-info {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        color: #888;
+      }
+
+      .delivery-info img {
+        margin-right: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+      const ProductPage = () => {
+        return (
+          <div className="product-container">
+            <div className="product-image">
+              <img src="https://teddybaldassarre.com/cdn/shop/articles/Rolex-Sea-Dweller-FI.jpg?v=1682368126" alt="Automatic Watch" />
+            </div>
+            <div className="product-title">Automatic Watch</div>
+            <div className="product-price">$350.00 USD</div>
+            <div className="product-description">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aliqui amet et delectus doloribus.
+            </div>
+
+            <div className="product-features">
+              <div className="section-title">FEATURES</div>
+              <div className="feature-list">
+                <span>Chronograph</span>
+                <span>Anti-magnetic</span>
+              </div>
+              <div className="feature-list">
+                <span>Master Chronometer Certified</span>
+                <span>Chronometer</span>
+              </div>
+              <div className="feature-list">
+                <span>Tachymeter</span>
+                <span>Small seconds</span>
+              </div>
+            </div>
+
+            <div className="product-details">
+              <div className="section-title">PRODUCT DETAILS</div>
+              <p><strong>Between lugs:</strong> 20 mm</p>
+              <p><strong>Bracelet:</strong> Leather strap</p>
+              <p><strong>Case:</strong> Steel</p>
+              <p><strong>Case diameter:</strong> 42 mm</p>
+              <p><strong>Dial color:</strong> Black</p>
+              <p><strong>Crystal:</strong> Domed, scratch-resistant sapphire with anti-reflective treatment</p>
+              <p><strong>Water resistance:</strong> 5 bar (50 meters / 167 feet)</p>
+            </div>
+
+            <div className="add-to-cart">ADD TO CART</div>
+
+            <div className="delivery-info">
+              <img src="data:image/png;base64,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" width="20" alt="Delivery Icon" />
+              <span>2-3 business days delivery</span>
+            </div>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<ProductPage />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
